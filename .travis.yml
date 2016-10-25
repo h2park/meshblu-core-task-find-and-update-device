@@ -1,31 +1,19 @@
 language: node_js
 node_js:
 - '5'
-env:
-- CXX=g++-4.8
-services:
-- mongodb
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - g++-4.8
-  code_climate:
-    repo_token: 757ed9af2195b942c348d9851dfcd4745ec05efab634efc002ea459411f0513f
-deploy:
-  provider: npm
-  email: serveradmin@octoblu.com
-  api_key:
-    secure: QHcc1Ki1BSz7QnOLKo1ZZo3JTqFeIcO8ZFIz+JT/yl1OxegjrTxXpAdzV0HQ1KSD29klc7o5a3ryL1tJX8RRLliYuB6g2sFWmNx8lx6gPduqh7AX3pBBIAbj6XmCAKT5WBfZjRa0ItuD4KlYBowvO5tM8cIdOA/z3UDpci9aQgsLjWZncWjuIggIPUDKkmE66V/h1bLDWfA2JJkU9sGBnIYAnIwhQ6tujg+sQkr63Qv3xlRW9rLHETRNZ69R8DnyzrXLoyvmLPmQGfsh0/RqUJ177XhQ2pFJQBza8/BslxNhMaByUdWprL8UDiboXyDPBbmecULCggR10H/N9c6YsiZ9x5zpBxIvdjEwfUK4mgmJ0l67Siwb26xkk659dviZwUqFJReEzPawZDDW4H/3DYg3rZQVPMftNLQ4BbtNq4PDtVKsSC5zCTicWZeDoiS7kPeX5H8uT+tTeugZkFO1gSz+qquFBHGlfeTsuD1d/0GA7K/9QqWlEmhOQ/LKsLpl8qgM9+N6ENSe6qAXpt9UhinCCAbXCeWATzZU7mnmCdN+NYmfF0jHf5gHaRFj084mPiJN8MHA6sgzdHVLSmFnw68xNBd7C0fjBIP4pDCqMDz4Qcqb2MvYUF6XQqbgBipL6v27TYpOcQzsMtTEPy++ptZ69rtDMdwRp5lB5OstuTE=
-  on:
-    tags: true
-    branches: true
 branches:
   only:
-  - "/^v[0-9]/"
+  - /^v[0-9]/
 after_success:
 - npm run coverage
 - npm run mocha:json
 - bash <(curl -s https://codecov.io/bash)
 - bash <(curl -s https://codecov.octoblu.com/bash)
+deploy:
+  provider: npm
+  email: serveradmin@octoblu.com
+  api_key:
+    secure: ZpupTe/fEsVb/kZTLk/MyvX47eNboCwFaLWiQH00HrKlpsfoayJ/jy5mUIu9DJ9BECghr/ASvmU3D355TlCC9TZ1ilOBv6Ivc7m4+8RAIS3wPCkrfHYyIgfWl+4puiQx7lsefg1cr5qryIg7P2nTLUlbQXyMPnPlA0I31QesFZ5zk83f35c1B4nlnjuFsbW4PnVgmdAb6+NkIgYNi2u12wrXI6LpCL+t4flEYCksMOn2hsbJRJd+i9scuh38r9qRYkKtY2zLJWkNwoxZpuWzj2YuQQqyVNQC69N+YjMxjYfnc9qnca8ChCpwh1dKP0K/6rcf9ojK0Zk50dESTPsp5+HnRETnVjAUzxnGXPEaKAE13SixFf5NJTGuxOvNMorYimnNKqvOZnwzFjrTvSOuRL55CR67WX8E12hHQLN/epUfdt6jR+435kJU27m3DiQw52iT9PUOWhOJO/Dq1Xclhxay4B/UrScEotqHbVbbWgsDN7CRUnCbnOggw6mTr0yzw828N2KVMNgqJfeHs3OjB37292RP0YBxytdZCZoKoc7Tqpdy9bow5H2ZWOSMaHh1LAi6hrMbTJdQkTEkKZztjbIzlH5FcynpXGIu4gh6CyoPYEfegvMpI8x3MrtElr4pmIWlwnyhgUPxuv24Gwd3dYuguspORJFAmOPqAcOsQsQ=
+  on:
+    tags: true
+    branches: true
