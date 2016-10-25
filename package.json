@@ -1,6 +1,6 @@
 {
   "name": "meshblu-core-task-find-and-update-device",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Meshblu core task for updating a device and return the prior version of the document",
   "main": "index.js",
   "scripts": {
