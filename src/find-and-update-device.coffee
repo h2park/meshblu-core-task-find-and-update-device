@@ -56,7 +56,6 @@ class FindAndUpdateDevice
     callback null, response
 
   _doErrorCallback: (request, error, callback) =>
-    console.log error.stack if error?
     code = error.code ? 500
     code = 500 unless http.STATUS_CODES[code]?
     response =

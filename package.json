@@ -1,6 +1,6 @@
 {
   "name": "meshblu-core-task-find-and-update-device",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Meshblu core task for updating a device and return the prior version of the document",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,7 @@
     "chai-subset": "^1.1.0",
     "coffee-script": "^1.10.0",
     "fakeredis": "^1.0.2",
-    "meshblu-core-datastore": "^4.8.2",
+    "meshblu-core-datastore": "^4.8.3",
     "mocha": "^2.3.4",
     "mocha-multi": "^0.9.1",
     "mocha-osx-reporter": "^0.1.2",
